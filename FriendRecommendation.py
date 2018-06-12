@@ -27,7 +27,6 @@ def create_network(file_name):
     network=[]
     lst = []
 
-    # YOUR CODE GOES HERE
     for char in friends:
         pair = char.split(' ')
         if len(pair)!=1:
@@ -65,8 +64,6 @@ def getCommonFriends(user1, user2, network):
     '''
     common=[]
     
-    # YOUR CODE GOES HERE
-
     lst = []
     location1 = locate(network, user1)
     location2 = locate(network, user2)
@@ -82,13 +79,6 @@ def getCommonFriends(user1, user2, network):
         i = i+1
     return common
 
-##    for i in network[location1][1]:
-##        for j in network[location2][1]:
-##            if i==j:
-##                common.append(i)
-##    common.sort()
-##    return common
-
     
 def recommend(user, network):
     '''(int, 2Dlist)->int or None
@@ -100,8 +90,6 @@ def recommend(user, network):
     you are not already friends with and with whom you have the most friends in common in the whole network.
     If there is more than one person with whom you have the maximum number of friends in common
     return the one with the smallest ID. '''
-
-    # YOUR CODE GOES HERE
     
     location = locate(network, user)
     net=[]
@@ -139,7 +127,6 @@ def k_or_more_friends(network, k):
     Given a 2D-list for friendship network and non-negative integer k,
     returns the number of users who have at least k friends in the network
     Precondition: k is non-negative'''
-    # YOUR CODE GOES HERE
 
     count = 0
     for item in network:
@@ -153,7 +140,6 @@ def maximum_num_friends(network):
     Given a 2D-list for friendship network,
     returns the maximum number of friends any user in the network has.
     '''
-    # YOUR CODE GOES HERE
     count = 0
     for item in network:
         if len(item[1]) >= count:
@@ -166,7 +152,6 @@ def people_with_most_friends(network):
     Given a 2D-list for friendship network, returns a list of people (IDs) who have the most friends in network.'''
 
     max_friends=[]
-    # YOUR CODE GOES HERE
     count = maximum_num_friends(network)
     for item in network:
         if len(item[1]) == count:
@@ -179,7 +164,6 @@ def average_num_friends(network):
     '''(2Dlist)->number
     Returns an average number of friends overs all users in the network'''
 
-    # YOUR CODE GOES HERE
     count = 0
     for item in network:
         count = count + len(item[1])
@@ -193,7 +177,6 @@ def knows_everyone(network):
     returns True if there is a user in the network who knows everyone
     and False otherwise'''
     
-    # YOUR CODE GOES HERE
     num_users = len(network)-1
     
     for i in network:
@@ -232,7 +215,6 @@ def get_uid(network):
     Keeps on asking for a user ID that exists in the network
     until it succeeds. Then it returns it'''
     
-    # YOUR CODE GOES HERE
     uid = input("Enter an integer for a user ID: ").strip()
     while (uid.isnumeric()==False):
         uid = input("That was not an integer. Please try again.\nEnter an integer for a user ID: ").strip()
@@ -255,8 +237,6 @@ def get_uid(network):
 ##############################
 # main
 ##############################
-
-# NOTHING FOLLOWING THIS LINE CAN BE REMOVED or MODIFIED
 
 file_name=get_file_name()
     
